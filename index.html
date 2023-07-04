@@ -24,9 +24,11 @@
     <main>
         <div id="app">
             <ul>
-                <li v-for="list in toDoList" :class="{'acquired': list.done == true}">
-                    {{ list.text }}
-
+                <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}">
+                    {{ list.text }}                
+                    <span @click="remove(i)">
+                        X
+                    </span>
                 </li>
             </ul>
         </div>
