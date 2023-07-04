@@ -51,6 +51,7 @@ createApp({
             //console.log('invertion')
             this.toDoList[index].done = !this.toDoList[index].done
         }
+        
 
     }
 }).mount('#app')
