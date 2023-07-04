@@ -34,7 +34,7 @@
                 </form>
     
                 <ul v-if="(toDoList.length > 0)">
-                    <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}">
+                    <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}" @click="invertion(i)">
                         {{ list.text }}                
                         <span @click="remove(i)">
                             X
@@ -45,7 +45,7 @@
                     <img src="https://iltalebano.files.wordpress.com/2017/09/meloni.jpg" alt="" class="w-25 h-25 mt-3">
                     Accattà u melun
                 </div>
-                
+
             </div>
         </div>
     </main>

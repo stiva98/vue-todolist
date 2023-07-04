@@ -46,6 +46,10 @@ createApp({
             };
             this.toDoList.push(newFood);
             this.newProduct = '';
+        },
+        invertion(index) {
+            //console.log('invertion')
+            this.toDoList[index].done = !this.toDoList[index].done
         }
 
     }
