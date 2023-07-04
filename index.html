@@ -23,14 +23,30 @@
 
     <main>
         <div id="app">
-            <ul>
-                <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}">
-                    {{ list.text }}                
-                    <span @click="remove(i)">
-                        X
-                    </span>
-                </li>
-            </ul>
+            <div class="container-fluid">
+
+                <form @submit.prevent="add()">
+                    <div class="mb-3">
+                      <label for="text-html" class="form-label">Aggiungi ciò che manca nella lista della spesa: </label>
+                      <input type="text" class="form-control" id="text-html" placeholder="Aggiungi qui..." required v-model="newProduct">
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Aggiungi</button>
+                </form>
+    
+                <ul v-if="(toDoList.length > 0)">
+                    <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}">
+                        {{ list.text }}                
+                        <span @click="remove(i)">
+                            X
+                        </span>
+                    </li>
+                </ul>
+                <div v-else>
+                    <img src="https://iltalebano.files.wordpress.com/2017/09/meloni.jpg" alt="" class="w-25 h-25 mt-3">
+                    Accattà u melun
+                </div>
+                
+            </div>
         </div>
     </main>
     
