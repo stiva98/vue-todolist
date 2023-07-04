@@ -34,11 +34,17 @@
                 </form>
     
                 <ul v-if="(toDoList.length > 0)">
-                    <li v-for="(list, i) in toDoList" :class="{'acquired': list.done == true}" @click="invertion(i)">
-                        {{ list.text }}                
+                    <li v-for="(list, i) in toDoList"
+                    @click="invertion(i)">
+
+                        <span class="me-5" :class="{'acquired': list.done == true}">
+                            {{ list.text }}                
+                        </span>
+
                         <span @click="remove(i)">
                             X
                         </span>
+
                     </li>
                 </ul>
                 <div v-else>
