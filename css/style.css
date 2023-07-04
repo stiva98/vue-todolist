@@ -7,3 +7,7 @@ RESET
     padding: 0;
     box-sizing: border-box;
 }
+
+.acquired {
+    text-decoration: line-through;
+}

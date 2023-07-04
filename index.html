@@ -23,7 +23,12 @@
 
     <main>
         <div id="app">
-            
+            <ul>
+                <li v-for="list in toDoList" :class="{'acquired': list.done == true}">
+                    {{ list.text }}
+
+                </li>
+            </ul>
         </div>
     </main>
     
